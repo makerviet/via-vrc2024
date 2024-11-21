@@ -1,5 +1,6 @@
-# VIA VRC 2024
-Mạch VIA Bánh Mì phiên bản tối ưu cho cuộc thi VRC 2024.
+# Hướng dẫn và ví dụ lập trình cho mạch VIA Bánh Mì cho cuộc thi VRC 2024
+
+Repo này bao gồm hướng dẫn cài đặt môi trường lập trình cho mạch VIA Bánh Mì và các ví dụ lập trình cho cuộc thi VRC 2024.
 
 ## 1. Hướng dẫn cài đặt môi trường cho Arduino IDE
 
