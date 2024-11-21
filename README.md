@@ -44,6 +44,8 @@ Khởi chạy phần mềm Arduino và thực hiện các bước sau:
 - Tại mục Tools chọn Board > ESP32 Dev Module; Port > COM (chọn cổng COM đã xác định được ở bước trên).
 - Verify và nạp code (dấu tick và mũi tên góc trên bên trái giao diện Arduino IDE):
 
+Lưu ý: Trước khi nạp code, cần tháo receiver của PS2 ra khỏi mạch VIA B.
+
 ``` cpp
 #define LED_BUILTIN = 13; 
 
