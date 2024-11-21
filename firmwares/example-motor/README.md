@@ -75,4 +75,4 @@ pwm.setPin(9, 2048, true);
 
 ## Ví dụ mẫu điều khiển động cơ 
 
-[Firmware .ino](/firmwares/makerbot-2024-motor-test/makerbot-2024-motor-test.ino)
+[Firmware .ino](/firmwares/example-motor/makerbot-2024-motor-test/makerbot-2024-motor-test.ino)

@@ -47,4 +47,4 @@ pwm.writeMicroseconds(5, 2000); // chọn kênh servo số 5
 ```
 ## Ví dụ mẫu điều khiển servo
 
-[Firmware .ino](/firmwares/makerbot-2024-servo-test/makerbot-2024-servo-test.ino)
+[Firmware .ino](/firmwares/example-servo/makerbot-2024-servo-test/makerbot-2024-servo-test.ino)

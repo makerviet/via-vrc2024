@@ -114,4 +114,4 @@ Serial.print(","); Serial.print(ps2x.Analog(PSS_LX), DEC); Serial.print(","); Se
 
 ## Ví dụ mẫu điều khiển động cơ bằng gamepad
 
-[Firmware .ino](/firmwares/makerbot-2024-ps2-motor-test/makerbot-2024-ps2-motor-test.ino)
+[Firmware .ino](/firmwares/example-ps2/makerbot-2024-ps2-motor-test/makerbot-2024-ps2-motor.ino)
