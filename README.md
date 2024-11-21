@@ -30,7 +30,7 @@ Hướng dẫn cài đặt ESP32 trên Arduino:
 - Mở **Arduino IDE > File > Preferences**
 - Chèn thêm đường link bên dưới tại phần **Additional Board Manager URLs:**
 ```
-https://raw.githubusercontent.com/espressif/arduino-esp32/gh-pages/package_esp32_index.json, http://arduino.esp8266.com/stable/package_esp8266com_index.json
+https://dl.espressif.com/dl/package_esp32_index.json, http://arduino.esp8266.com/stable/package_esp8266com_index.json
 ```
 - Vào **Tool** > **Board** > **Boards Manager**
 - Tìm kiếm với từ khóa “esp32” , trong danh sách kết quả chọn “**ESP32 by Espressif Systems”** và nhấn **Install**
