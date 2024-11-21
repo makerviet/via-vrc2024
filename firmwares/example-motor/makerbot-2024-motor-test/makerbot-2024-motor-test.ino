@@ -14,35 +14,35 @@ Adafruit_PWMServoDriver pwm = Adafruit_PWMServoDriver();
 
 void setMotorSpeed(int speedR1, int speedR2, int speedR3, int speedR4) {
   if (speedR1 >= 0) {
-    pwm.setPWM(R1_A, 0, speedR1);
-    pwm.setPWM(R1_B, 0, 0);
+    pwm.setPWM(MOTOR_1_CHANNEL_A, 0, speedR1);
+    pwm.setPWM(MOTOR_1_CHANNEL_B, 0, 0);
   } else {
-    pwm.setPWM(R1_A, 0, 0);
-    pwm.setPWM(R1_B, 0, abs(speedR1));
+    pwm.setPWM(MOTOR_1_CHANNEL_A, 0, 0);
+    pwm.setPWM(MOTOR_1_CHANNEL_B, 0, abs(speedR1));
   }
 
   if (speedR2 >= 0) {
-    pwm.setPWM(R2_A, 0, speedR2);
-    pwm.setPWM(R2_B, 0, 0);
+    pwm.setPWM(MOTOR_2_CHANNEL_A, 0, speedR2);
+    pwm.setPWM(MOTOR_2_CHANNEL_B, 0, 0);
   } else {
-    pwm.setPWM(R2_A, 0, 0);
-    pwm.setPWM(R2_B, 0, abs(speedR2));
+    pwm.setPWM(MOTOR_2_CHANNEL_A, 0, 0);
+    pwm.setPWM(MOTOR_2_CHANNEL_B, 0, abs(speedR2));
   }
 
   if (speedR3 >= 0) {
-    pwm.setPWM(R3_A, 0, speedR3);
-    pwm.setPWM(R3_B, 0, 0);
+    pwm.setPWM(MOTOR_3_CHANNEL_A, 0, speedR3);
+    pwm.setPWM(MOTOR_3_CHANNEL_B, 0, 0);
   } else {
-    pwm.setPWM(R3_A, 0, 0);
-    pwm.setPWM(R3_B, 0, abs(speedR3));
+    pwm.setPWM(MOTOR_3_CHANNEL_A, 0, 0);
+    pwm.setPWM(MOTOR_3_CHANNEL_B, 0, abs(speedR3));
   }
 
   if (speedR4 >= 0) {
-    pwm.setPWM(R4_A, 0, speedR4);
-    pwm.setPWM(R4_B, 0, 0);
+    pwm.setPWM(MOTOR_4_CHANNEL_A, 0, speedR4);
+    pwm.setPWM(MOTOR_4_CHANNEL_B, 0, 0);
   } else {
-    pwm.setPWM(R4_A, 0, 0);
-    pwm.setPWM(R4_B, 0, abs(speedR4));
+    pwm.setPWM(MOTOR_4_CHANNEL_A, 0, 0);
+    pwm.setPWM(MOTOR_4_CHANNEL_B, 0, abs(speedR4));
   }
 }
 
