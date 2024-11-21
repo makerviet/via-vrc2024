@@ -26,8 +26,7 @@ Sau khi kết nối bộ thu với mạch VIA và cấp nguồn cho mạch VIA, 
 ## Đọc tín hiệu từ gamepad
 Tải và cài đặt thư viện Gamepad PS2 RF: 
 https://github.com/makerviet/Arduino-PS2X-ESP32-Makerbot
-Sau khi cài đặt thư viện, bạn có thể xem ví dụ mẫu điều khiển động cơ bằng Gamepad với mạch VIA đi kèm thư viện:
-File->examples->Arduino-PS2X-ESP32-Makerbot>PS2X_Example_VIA_Makerbot_ESP32
+Sau khi cài đặt thư viện, bạn có thể xem ví dụ mẫu điều khiển động cơ bằng Gamepad với mạch VIA đi kèm thư viện tại [đây](/firmwares/example-ps2/makerbot-2024-ps2-motor-test/makerbot-2024-ps2-motor-test.ino)
 
 ## Bản đồ nút bấm và tín hiệu tương ứng
 <img src="img4.png" alt= “” width="50%" height="50%">
@@ -37,7 +36,7 @@ File->examples->Arduino-PS2X-ESP32-Makerbot>PS2X_Example_VIA_Makerbot_ESP32
 ## Ví dụ mẫu
 Tìm hiểu ví dụ đọc các nút bấm gửi từ tay điều khiển (PS2X_Example_VIA_Makerbot_ESP32) 
 
-```
+``` cpp
 //Khai báo thư viện cho tay cầm
 #include <PS2X_lib.h> // Khai báo thư viện
 
@@ -49,10 +48,11 @@ Tìm hiểu ví dụ đọc các nút bấm gửi từ tay điều khiển (PS2X
 
 //Khởi tạo class của thư viện
 PS2X ps2x; // khởi tạo class PS2x
+```
 
-```
 Bắt đầu kết nối trong hàm setup()
-```
+
+```cpp
 //Khởi tạo Serial monitor với tốc độ 115200
 Serial.begin(115200);
 
@@ -70,17 +70,19 @@ for (int i = 0; i < 10; i++) // thử kết nối với tay cầm ps2 trong 10 l
 } 
 ```
 Đọc giá trị tay điều khiển trong hàm hàm loop()
-```
+
+```cpp
 //Cập nhật các giá trị của tay điều khiển
 ps2x.read_gamepad(false, false); // gọi hàm để đọc tay điều khiển 
 ```
 Đọc nút bấm theo kiểu digital, True khi nhấn, False khi không nhấn
-```
+```cpp
 // các trả về giá trị TRUE (1) khi nút được giữ 
 if (ps2x.Button(PSB_START)) // nếu nút Start được giữ, in ra Serial monitor 	Serial.println("Start is being held");
 ```
+
 Đọc nút bẩm theo kiểu Analog, lấy giá trị độ lớn, ấn mạnh hay nhẹ
-```
+```cpp
 if (ps2x.Button(PSB_PAD_UP)) // tương tự như trên kiểm tra nút Lên (PAD UP) 
 { 
    Serial.print("Up held this hard: ");     
@@ -89,7 +91,8 @@ if (ps2x.Button(PSB_PAD_UP)) // tương tự như trên kiểm tra nút Lên (PA
 }
 ```
 Đọc nút bấm theo sự thay đổi trạng thái (bật, bật hoặc tắt, tắt)
-```
+
+```cpp
 if (ps2x.ButtonPressed(PSB_CIRCLE)) // Trả về giá trị TRUE khi nút được ấn (từ tắt sang bật) 
    Serial.println("○ just pressed"); 
 if (ps2x.NewButtonState(PSB_CROSS)) // Trả về giá trị TRUE khi nút được thay đổi trạng thái (bật sang tắt, hoặc tắt sang bật) 
@@ -106,7 +109,8 @@ if (ps2x.NewButtonState()) {
 }
 ```
 Đọc giá trị joystick
-```
+
+```cpp
 Serial.print("Stick Values:"); 
 Serial.print(ps2x.Analog(PSS_LY)); // đọc trục Y của joystick bên trái. 
 Serial.print(","); Serial.print(ps2x.Analog(PSS_LX), DEC); Serial.print(","); Serial.print(ps2x.Analog(PSS_RY), DEC); Serial.print(","); Serial.println(ps2x.Analog(PSS_RX), DEC);
@@ -114,4 +118,4 @@ Serial.print(","); Serial.print(ps2x.Analog(PSS_LX), DEC); Serial.print(","); Se
 
 ## Ví dụ mẫu điều khiển động cơ bằng gamepad
 
-[Firmware .ino](/firmwares/example-ps2/makerbot-2024-ps2-motor-test/makerbot-2024-ps2-motor.ino)
+[Firmware .ino](/firmwares/example-ps2/makerbot-2024-ps2-motor-test/makerbot-2024-ps2-motor-test.ino)
