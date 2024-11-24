@@ -1,10 +1,5 @@
----
-version: 1
-title: Điều  khiển động cơ với mạch VIA B
-weight: 20
-draft: False
----
-## Kết nối động cơ DC với mạch VIA
+# Kết nối động cơ DC với mạch VIA
+
 Bạn có thể kết nối động cơ vào 1 trong 4 cổng động cơ trên mạch công suất
 **Lưu ý:** ghi nhớ kênh PWM của các cổng động cơ
 ![](via_motorshield_ports.png)
