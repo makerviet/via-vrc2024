@@ -52,7 +52,7 @@ void setMotorSpeed(int speedR1, int speedR2, int speedR3, int speedR4) {
 
 void setup() {
   Serial.begin(115200);
-  Serial.println("Servo test firmware for MakerBot 2024");
+  Serial.println("Motor test firmware for MakerBot 2024");
 
   pwm.begin();
   pwm.setPWMFreq(50); 
