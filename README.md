@@ -1,6 +1,6 @@
-# Hướng dẫn và ví dụ lập trình cho mạch VIA Bánh Mì cho cuộc thi VRC 2024
+# Hướng dẫn và ví dụ lập trình cho mạch VIA Bánh Mì (VIA 2025)
 
-Repo này bao gồm hướng dẫn cài đặt môi trường lập trình cho mạch VIA Bánh Mì và các ví dụ lập trình cho cuộc thi VRC 2024.
+Repo này bao gồm hướng dẫn cài đặt môi trường lập trình cho mạch VIA Bánh Mì và các ví dụ lập trình mẫu cho mạch VIA Bánh Mì (VIA 2025) sử dụng vi điều khiển ESP32.
 
 ## 1. Hướng dẫn cài đặt môi trường cho Arduino IDE
 
@@ -51,7 +51,7 @@ void loop() {
 }
 ```
 
-## 2. Firmware ví dụ cho cuộc thi VRC 2024
+## 2. Firmware ví dụ của mạch VIA B (2025)
 
 | Hướng dẫn | Đường dẫn |
 | --- | --- |
