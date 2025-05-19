@@ -108,8 +108,23 @@ void loop() {
   setMotorSpeed(0, 0, 0, 0);
   delay(500); // Delay 500ms before next test
 
-  Serial.println("Motor 1 & Motor 3 running backward at 2000 & Motor 2 & Motor 4 running forward at 2000 for 3 seconds");
-  setMotorSpeed(-2000, 2000, -2000, 2000);
+  Serial.println("Motor 1 & Motor 3 running backward at 3500 & Motor 2 & Motor 4 running forward at 3500 for 3 seconds");
+  setMotorSpeed(-3500, 3500, -3500, 3500);
+  delay(3000);
+
+  Serial.println("All motor stop");
+  setMotorSpeed(0, 0, 0, 0);
+
+  Serial.println("Motor 1 & Motor 3 running forward at 3500 & Motor 2 & Motor 4 running backward at 3500 for 3 seconds");
+  setMotorSpeed(3500, -3500, 3500, -3500);
+  delay(3000);
+
+  Serial.println("All motor stop for 0.5 second");
+  setMotorSpeed(0, 0, 0, 0);
+  delay(500); // Delay 500ms before next test
+
+  Serial.println("Motor 1 & Motor 3 running backward at 3500 & Motor 2 & Motor 4 running forward at 3500 for 3 seconds");
+  setMotorSpeed(-3500, 3500, -3500, 3500);
   delay(3000);
 
   Serial.println("All motor stop");
