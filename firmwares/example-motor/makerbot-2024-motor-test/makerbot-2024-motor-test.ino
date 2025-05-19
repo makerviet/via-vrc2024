@@ -14,43 +14,45 @@ Adafruit_PWMServoDriver pwm = Adafruit_PWMServoDriver();
 
 #define NOTIFY_LED 13
 
+#define INVERT_PWM true
+
 void setMotorSpeed(int speedR1, int speedR2, int speedR3, int speedR4) {
   if (speedR1 >= 0) {
-    pwm.setPin(MOTOR_1_CHANNEL_A, speedR1);
-    pwm.setPin(MOTOR_1_CHANNEL_B, 0);
+    pwm.setPin(MOTOR_1_CHANNEL_A, speedR1, INVERT_PWM);
+    pwm.setPin(MOTOR_1_CHANNEL_B, 0, INVERT_PWM);
   } else {
-    pwm.setPin(MOTOR_1_CHANNEL_A, 0);
-    pwm.setPin(MOTOR_1_CHANNEL_B, abs(speedR1));
+    pwm.setPin(MOTOR_1_CHANNEL_A, 0, INVERT_PWM);
+    pwm.setPin(MOTOR_1_CHANNEL_B, abs(speedR1), INVERT_PWM);
   }
 
   if (speedR2 >= 0) {
-    pwm.setPin(MOTOR_2_CHANNEL_A, speedR2);
-    pwm.setPin(MOTOR_2_CHANNEL_B, 0);
+    pwm.setPin(MOTOR_2_CHANNEL_A, speedR2, INVERT_PWM);
+    pwm.setPin(MOTOR_2_CHANNEL_B, 0, INVERT_PWM);
   } else {
-    pwm.setPin(MOTOR_2_CHANNEL_A, 0);
-    pwm.setPin(MOTOR_2_CHANNEL_B, abs(speedR2));
+    pwm.setPin(MOTOR_2_CHANNEL_A, 0, INVERT_PWM);
+    pwm.setPin(MOTOR_2_CHANNEL_B, abs(speedR2), INVERT_PWM);
   }
 
   if (speedR3 >= 0) {
-    pwm.setPin(MOTOR_3_CHANNEL_A, speedR3);
-    pwm.setPin(MOTOR_3_CHANNEL_B, 0);
+    pwm.setPin(MOTOR_3_CHANNEL_A, speedR3, INVERT_PWM);
+    pwm.setPin(MOTOR_3_CHANNEL_B, 0, INVERT_PWM);
   } else {
-    pwm.setPin(MOTOR_3_CHANNEL_A, 0);
-    pwm.setPin(MOTOR_3_CHANNEL_B, abs(speedR3));
+    pwm.setPin(MOTOR_3_CHANNEL_A, 0, INVERT_PWM);
+    pwm.setPin(MOTOR_3_CHANNEL_B, abs(speedR3), INVERT_PWM);
   }
 
   if (speedR4 >= 0) {
-    pwm.setPin(MOTOR_4_CHANNEL_A, speedR4);
-    pwm.setPin(MOTOR_4_CHANNEL_B, 0);
+    pwm.setPin(MOTOR_4_CHANNEL_A, speedR4, INVERT_PWM);
+    pwm.setPin(MOTOR_4_CHANNEL_B, 0, INVERT_PWM);
   } else {
-    pwm.setPin(MOTOR_4_CHANNEL_A, 0);
-    pwm.setPin(MOTOR_4_CHANNEL_B, abs(speedR4));
+    pwm.setPin(MOTOR_4_CHANNEL_A, 0, INVERT_PWM);
+    pwm.setPin(MOTOR_4_CHANNEL_B, abs(speedR4), INVERT_PWM);
   }
 }
 
 void setup() {
   Serial.begin(115200);
-  Serial.println("Servo test firmware for MakerBot 2024");
+  Serial.println("Motor test firmware for MakerBot 2024");
 
   pwm.begin();
   pwm.setPWMFreq(50); 
@@ -74,18 +76,18 @@ void loop() {
   }
 
   for (int i = 8; i <= 15; i++) { // Test all motor channel sequentially
-    for (int j = 8; j <= 15; j++) pwm.setPin(j, 0, true); // Set all motor to 0 before test
+    for (int j = 8; j <= 15; j++) pwm.setPin(j, 0, INVERT_PWM); // Set all motor to 0 before test
     
     for (int pwm_val = 0; pwm_val <= 4000; pwm_val += 200) { // Sweep from 0 to 4000 in steps of 100
       Serial.print("Motor channel ");
       Serial.print(i);
       Serial.print(" running at ");
       Serial.println(pwm_val);
-      pwm.setPin(i, pwm_val, true);
+      pwm.setPin(i, pwm_val, INVERT_PWM);
       delay(200); // Delay 300ms between each step
     } 
 
-    pwm.setPin(i, 0, true); // Set motor to 0 after test
+    pwm.setPin(i, 0, INVERT_PWM); // Set motor to 0 after test
   }
 
   // Test all motor channel simultaneously
