@@ -13,18 +13,16 @@
 
 Adafruit_PWMServoDriver pwm = Adafruit_PWMServoDriver();
 
-bool isInverted = true;
-
 void setPWMMotors(int c1, int c2, int c3, int c4)
 {
   char dbg_str[30];
   sprintf(dbg_str,"C1: %d\tC2: %d\tC3: %d\tC4: %d",c1,c2,c3,c4);
   Serial.println(dbg_str);
 
-  pwm.setPin(PWM_CHANNEL1, c1, isInverted);
-  pwm.setPin(PWM_CHANNEL2, c2, isInverted);
-  pwm.setPin(PWM_CHANNEL3, c3, isInverted);
-  pwm.setPin(PWM_CHANNEL4, c4, isInverted);
+  pwm.setPin(PWM_CHANNEL1, c1);
+  pwm.setPin(PWM_CHANNEL2, c2);
+  pwm.setPin(PWM_CHANNEL3, c3);
+  pwm.setPin(PWM_CHANNEL4, c4);
 }
 
 void initMotors()
