@@ -55,16 +55,16 @@ Wire.setClock(400000);
 Đối với mạch VIA Bánh Mì trong cuộc thi VRC 2024, động cơ DC sẽ được điều khiển bằng hàm `pwm.setPin(channel, value, invert)` trong đó:
 - `channel`: là số kênh của PCA9685, tương ứng với cổng động cơ DC trên mạch VIA Bánh Mì
 - `value`: là giá trị PWM từ 0 đến 4095, tương ứng với tốc độ quay của động cơ DC
-- `invert`: là giá trị boolean, mặc định là `false`, nếu `true` thì giá trị PWM sẽ bị đảo ngược. Trường hợp này, chúng ta nên để giá trị là `false`.
+- `invert`: là giá trị boolean, mặc định là `false`, nếu `true` thì giá trị PWM sẽ bị đảo ngược. Trong trường hợp sử dụng mạch VIA Bánh Mì, giá trị này không cần thiết phải thay đổi.
 Ví dụ: Để động cơ DC có chân 8, 9 quay với tốc độ 50%
 ``` cpp
-pwm.setPin(8, 2048, false);
-pwm.setPin(9, 0, false);
+pwm.setPin(8, 2048);
+pwm.setPin(9, 0);
 
 // Hoặc điều khiển ngược lại
 
-pwm.setPin(8, 0, false);
-pwm.setPin(9, 2048, false);
+pwm.setPin(8, 0);
+pwm.setPin(9, 2048);
 ```
 
 ## Ví dụ mẫu điều khiển động cơ 
